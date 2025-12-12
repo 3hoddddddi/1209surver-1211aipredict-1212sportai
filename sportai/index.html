@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Match Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f172a; 
+        }
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+        
+        
+        @keyframes scan-line {
+            0% { top: -10%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 95%; opacity: 0; }
+        }
+        .animate-scanline { animation: scan-line 3s linear infinite; }
+
+ 
+        @keyframes btn-shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .animate-shimmer { 
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: btn-shimmer 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-white tap-highlight-transparent flex flex-col min-h-screen">
+
+    <div class="sticky top-0 w-full bg-[#0f172a] border-b border-white/10 p-5 z-50 text-center shadow-lg shrink-0">
+        <h1 class="text-base font-extrabold text-white tracking-widest uppercase leading-none">
+            NG'S BEST PREDICTION APP
+        </h1>
+    </div>
+
+    <div class="flex flex-col items-center justify-start w-full flex-grow">
+        
+        <div class="w-full flex-grow min-h-full md:min-h-0 md:h-auto md:max-w-sm bg-[#0f172a] md:border md:border-t-0 border-gray-800 md:rounded-b-2xl rounded-b-none shadow-none md:shadow-2xl relative overflow-hidden flex flex-col pb-8">
+            
+            <div class="relative w-full aspect-[16/10] bg-black overflow-hidden group z-0">
+                <img src="./sportai/football_ai.jpg" alt="App Interface" class="w-full h-full object-cover opacity-100 relative z-0">
+                <div class="absolute left-0 w-full h-[2px] bg-green-400/50 shadow-[0_0_20px_#4ade80] animate-scanline z-20"></div>
+                <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0f172a] to-transparent z-10"></div>
+            </div>
+
+            <div class="px-6 relative z-10 -mt-2">
+                
+                <h2 class="text-2xl font-extrabold text-white mb-2 leading-tight drop-shadow-lg">
+                    Predict <span class="text-yellow-400">Premier League</span> matches with AI.
+                </h2>
+                
+                <div class="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                    <p class="text-xs text-slate-400">
+                        Available now in <strong class="text-white">Nigeria</strong>.
+                    </p>
+                    <span class="text-[10px] text-slate-500 font-mono">v2.4 Updated</span>
+                </div>
+
+                <div class="space-y-2 mb-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0 border border-green-500/20 text-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">Daily Match Analysis</h3>
+                            <p class="text-[11px] text-slate-500 leading-tight mt-0.5">High value analysis for today's games.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0 border border-green-500/20 text-green-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white">96% Success Rate</h3>
+                            <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Powered by historical data algorithm.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-white/5 rounded-xl p-3 mb-3 flex flex-col gap-2">
+                    <div class="text-left">
+                        <span class="text-[10px] text-white font-bold uppercase tracking-wider block">
+                            How to start free trial
+                        </span>
+                    </div>
+                    
+                    <div class="space-y-1.5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-slate-700 text-white flex items-center justify-center text-[10px] font-bold shrink-0">1</div>
+                            <p class="text-xs text-slate-300">Click the button below</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-slate-700 text-white flex items-center justify-center text-[10px] font-bold shrink-0">2</div>
+                            <p class="text-xs text-white font-bold">Submit phone number on next page</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://google.com" class="relative w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-black py-4 rounded-xl text-sm uppercase tracking-widest shadow-[0_0_20px_rgba(34,197,94,0.3)] overflow-hidden transition-transform active:scale-95 border-t border-green-400 flex items-center justify-center">
+                    <div class="absolute inset-0 animate-shimmer pointer-events-none"></div>
+                    <span class="relative z-10">Get Free Prediction</span>
+                </a>
+                
+                <p class="mt-4 text-center text-[10px] text-slate-600">
+                    No credit card required • Instant access
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
