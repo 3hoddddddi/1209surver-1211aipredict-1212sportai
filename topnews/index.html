@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Report: Tech & Lifestyle</title>
+    <meta name="description" content="Digital opportunities in Nigeria.">
+    <meta name="theme-color" content="#002855">
+    <style>
+        /* CSS RESET */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+        
+        /* HEADER */
+        header {
+            background-color: #002855;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #bda85f;
+        }
+        .header-brand { 
+            font-family: 'Georgia', serif; 
+            font-size: 22px; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+        }
+        .category-tag { 
+            font-family: Helvetica, Arial, sans-serif;
+            background: white; color: #002855; 
+            padding: 2px 8px; border-radius: 2px; font-size: 10px; font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        /* CONTAINER */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px 20px 40px 20px;
+            min-height: 100vh;
+            border-left: 1px solid #eee;
+            border-right: 1px solid #eee;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            font-size: 11px;
+            color: #002855;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        /* HEADLINES */
+        h1 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 23px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            color: #000;
+            font-weight: 700;
+        }
+        .sub-headline {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 15px;
+            font-weight: 400;
+            line-height: 1.5;
+            border-left: 3px solid #bda85f;
+            padding-left: 10px;
+        }
+
+        /* META DATA */
+        .meta-info {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            color: #777;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+        .author-dot { width: 3px; height: 3px; background: #777; border-radius: 50%; margin: 0 8px; }
+
+        /* IMAGE */
+        .featured-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .image-caption {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        /* CONTENT */
+        .content p {
+            margin-bottom: 18px;
+            font-size: 17px;
+            color: #222;
+        }
+        
+        .content h3 {
+            font-family: 'Georgia', serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: #002855;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* SMART LINKS */
+        .smart-link {
+            color: #002855;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: #002855;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            cursor: pointer;
+        }
+        .smart-link:hover { background-color: #f0f4f8; }
+
+        /* QUOTE BOX */
+        .interview-quote {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            color: #000;
+            border-top: 1px solid #002855;
+            border-bottom: 1px solid #002855;
+            padding: 15px 0;
+            margin: 25px 0;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* BOTTOM CTA */
+        .next-read-section {
+            margin-top: 40px;
+            padding-top: 0;
+        }
+        
+        .next-label {
+            font-size: 10px;
+            color: #cc0000;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .read-more-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 4px solid #002855;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .read-more-link:active { background-color: #e0e0e0; transform: scale(0.99); }
+        
+        .link-text {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            line-height: 1.3;
+        }
+        .link-arrow {
+            color: #002855;
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* LOADING MODAL */
+        #loadingModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.98);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #002855;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 20px;
+        }
+        .loading-text { color: #333; font-weight: 700; font-size: 16px; }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-brand">The Daily Journal</div>
+        <div class="category-tag">TECH</div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            Nigeria > <span>Lifestyle</span>
+        </div>
+
+        <h1>REPORT: 80% of Nigerians Fail This Simple Quiz. But The "Smart Few" Are Using It To Earn ₦100,000 Weekly.</h1>
+
+        <div class="sub-headline">
+            It’s not about luck. It’s about being smarter than the average person.
+        </div>
+
+        <div class="meta-info">
+            By Staff Reporter <div class="author-dot"></div> <span id="publish-date">Loading...</span>
+        </div>
+
+        <img src="friends_trivia.jpg" alt="Locals checking quiz results" class="featured-image">
+        <div class="image-caption">Chinedu (left) showing his daily winnings to a friend in Ikeja.</div>
+
+        <div class="content">
+            <p><strong>LAGOS</strong> — Stop playing lottery games. A new report shows that while 80% of people fail to make money online, a specific group of "intellectuals" are quietly cashing out.</p>
+            
+            <h3>The High-IQ Repairer</h3>
+
+            <p>Chinedu, 28, fixes complex phone circuits at Computer Village. Despite his high IQ (120), he was earning peanuts. "I needed something that rewarded my brain, not my wallet," he says.</p>
+
+            <p>Last week, while browsing online, he found a verified <span class="smart-link" onclick="go()">Daily Reward Challenge</span> based on Logic and quick Thinking.</p>
+
+            <div class="interview-quote">
+                "People think you need to be a 'Yahoo boy' to make money online. No. You just need to be sharper than the rest."
+            </div>
+
+            <p>Seeing the <strong>"First Day Free"</strong> offer, Chinedu decided to take the <span class="smart-link" onclick="go()">logic test</span>. The result? He solved 5 puzzles correctly in 3 minutes and received an instant credit.</p>
+
+            <h3>Reporter's Verification</h3>
+
+            <p>Our reporters verified the platform <span id="dynamic-date-text">today</span>. It is a legitimate initiative rewarding educated subscribers.</p>
+            
+            <p>The tasks are simple for smart minds, but 80% still fail because they rush. If you represent the top 20% of smart Nigerians, you can <span class="smart-link" onclick="go()">prove it</span>.</p>
+        </div>
+
+        <div class="next-read-section">
+            <div class="next-label">UP NEXT: CHALLENGE START</div>
+            
+            <div class="read-more-link" onclick="go()">
+                <div class="link-text">
+                    Prove Your IQ: Click To Start The "First Day Free" Challenge
+                </div>
+                <div class="link-arrow">&rarr;</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; <span id="footer-year">2025</span> Daily News Updates NG. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="loadingModal">
+        <div class="spinner"></div>
+        <div class="loading-text" id="loadingText">Checking Network...</div>
+    </div>
+
+    <script>
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const currentMonth = today.toLocaleString('en-US', { month: 'long' });
+
+        document.getElementById('publish-date').innerText = today.toLocaleDateString('en-US', dateOptions);
+        document.getElementById('dynamic-date-text').innerText = today.toLocaleDateString('en-US', { weekday: 'long' }); 
+        document.getElementById('footer-year').innerText = currentYear;
+
+        function go() {
+            const modal = document.getElementById('loadingModal');
+            const text = document.getElementById('loadingText');
+            
+            modal.style.display = 'flex';
+
+            setTimeout(() => {
+                text.innerText = "Verifying Device...";
+            }, 800);
+
+            setTimeout(() => {
+                text.innerText = "Loading Challenge...";
+            }, 1800);
+
+            setTimeout(() => {
+                window.location.href = "https://ky91x.bemobtrk.com/click"; 
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
